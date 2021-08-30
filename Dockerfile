@@ -1,4 +1,4 @@
-FROM docker.4pd.io/base-image-openjdk8:1.0.1
+FROM openjdk
 
 ADD ./target/java-exporter-1.0-SNAPSHOT.jar .
 
