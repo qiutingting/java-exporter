@@ -64,12 +64,36 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.9.8</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>bsh</artifactId>
+          <groupId>org.beanshell</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>jcommander</artifactId>
+          <groupId>com.beust</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
   <distributionManagement>
-    <repository>
-      <id>tech-snapshots</id>
-      <name>user release resp</name>
-      <url>http://k8s.testing-studio.com:8081/repository/maven-snapshots/</url>
-    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>user snapshot resp</name>
+      <url>http://60.205.224.183:8082/repository/java-snapshot/</url>
+    </snapshotRepository>
   </distributionManagement>
+  <properties>
+    <allure.version>1.4.23</allure.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.version>4.0.6.RELEASE</spring.version>
+    <aspectj.version>1.8.5</aspectj.version>
+  </properties>
 </project>
 

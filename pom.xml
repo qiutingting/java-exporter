@@ -7,6 +7,7 @@
     <groupId>promethues</groupId>
     <artifactId>java-exporter</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -129,11 +130,11 @@
 
     <!-- 设置deploy的地址 -->
     <distributionManagement>
-    <repository>
-        <id>tech-snapshots</id>                    <!--库的ID-->
-        <name>user release resp</name>   <!--库的名字-->
-        <url>http://k8s.testing-studio.com:8081/repository/maven-snapshots/</url>
-    </repository>
+        <snapshotRepository>
+        <id>snapshots</id>                    <!--库的ID-->
+        <name>user snapshot resp</name>   <!--库的名字-->
+        <url>http://60.205.224.183:8082/repository/java-snapshot/</url>
+        </snapshotRepository>
     </distributionManagement>
 
 
