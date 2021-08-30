@@ -2,7 +2,16 @@ pipeline{
     agent { label 'tech' }
     stages{
 
-        
+        stage('代码扫描'){
+          steps{
+              sh """
+                 mvn sonar:sonar \
+                    -Dsonar.projectKey=exporter2 \
+                    -Dsonar.host.url=http://60.205.224.183:9000 \
+                    -Dsonar.login=ae78faed08f37e8344f3a427be7ca585c05ca40b
+              """
+          }
+        }
 
         stage('执行单侧'){
             steps{
