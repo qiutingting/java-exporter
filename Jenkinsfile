@@ -32,8 +32,8 @@ pipeline{
         stage('编译镜像'){
             steps{
                 sh """
-                    sudo docker build -t http://60.205.224.183:5000/java-exporter .
-                    sudo docker push http://60.205.224.183:5000/java-exporter
+                    sudo docker build -t 60.205.224.183:5000/java-exporter .
+                    sudo docker push 60.205.224.183:5000/java-exporter
                 """
                 }
         }
@@ -42,9 +42,9 @@ pipeline{
         stage('部署环境'){
             steps{
                 sh """
-                    sudo docker pull http://60.205.224.183:5000/java-exporter
+                    sudo docker pull 60.205.224.183:5000/java-exporter
                     sudo docker rm -f java-exporter || echo 'There is no java-exporter running'
-                    sudo docker run --name java-exporter -d -p 8999:1234 http://60.205.224.183:5000/java-exporter
+                    sudo docker run --name java-exporter -d -p 8999:1234 60.205.224.183:5000/java-exporter
                 """
                 }
             }
